@@ -1,5 +1,7 @@
 # E-commerce Profitability & Forecasting System
 
+[Open the live dashboard](https://mahima-ecommerce-analytics.streamlit.app/) · [Source repository](https://github.com/mahima68/ecommerce-profitability-demand-forecasting)
+
 A working local portfolio case study with an interactive Streamlit dashboard, reproducible data pipeline, SQL analysis, weekly forecasting, pricing sensitivity, a simulated experiment, and a free deterministic business-analysis assistant. The default app requires no paid API, Power BI, or Docker. Streamlit is the dashboard for the Mac-compatible project. The local analyst uses rules and Python calculations, not GenAI.
 
 ![Dashboard overview](assets/overview.jpg)
@@ -99,7 +101,7 @@ The 53-test suite covers private settings, Power BI export totals and report fie
 
 A Dockerfile and Compose configuration are included. Docker was not available here, so container build/deployment remains unverified.
 
-For public hosting, push the source package to your chosen GitHub repository, then deploy `app.py` with Python 3.12 on Streamlit Community Cloud. Keep the processed transaction file and summary reports in the repository; exclude raw workbook/cache, SQLite database, `.env`, and `.streamlit/secrets.toml`. No public deployment has been made yet. See `docs/DEPLOYMENT.md` for the exact handoff.
+For public hosting, push the source package to your chosen GitHub repository, then deploy `app.py` with Python 3.12 on Streamlit Community Cloud. Keep the processed transaction file and summary reports in the repository; exclude raw workbook/cache, SQLite database, `.env`, and `.streamlit/secrets.toml`. The dashboard is deployed on Streamlit Community Cloud with Python 3.12 and the free local analyst. All seven hosted pages and interactive pricing/analyst checks passed. See `docs/DEPLOYMENT.md` for the exact handoff.
 
 ## Portfolio material
 

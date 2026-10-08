@@ -1,6 +1,8 @@
 # Deployment handoff
 
-The working local app is built and tested. Public hosting has not been activated.
+The app is deployed at [https://mahima-ecommerce-analytics.streamlit.app/](https://mahima-ecommerce-analytics.streamlit.app/). The source is published in `mahima68/ecommerce-profitability-demand-forecasting`, branch `main`, entry point `app.py`. The hosted runtime is Python 3.12.15. All seven pages were checked, including a live price scenario and calculated local analyst answer. No API credentials are configured on the host.
+
+The host flagged PyArrow 25.0.1 for a known stability issue and replaced it with 24.0.0. Requirements now pin 24.0.0 explicitly; all 53 local tests pass with this version.
 
 ## Streamlit Community Cloud
 

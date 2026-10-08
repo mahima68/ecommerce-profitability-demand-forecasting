@@ -1,0 +1,25 @@
+{
+  "verified_date": "2026-10-09",
+  "url": "https://mahima-ecommerce-analytics.streamlit.app/",
+  "repository": "mahima68/ecommerce-profitability-demand-forecasting",
+  "python": "3.12.15",
+  "pyarrow": "24.0.0",
+  "pages_checked": [
+    "Overview",
+    "Products",
+    "Forecast",
+    "Pricing",
+    "Experiment",
+    "Analyst",
+    "Methodology"
+  ],
+  "overview_net_revenue_gbp_displayed": 1432732,
+  "overview_profit_gbp_displayed": 340953,
+  "forecast_units_displayed": 476375,
+  "price_change_percent": 7,
+  "scenario_profit_gbp_displayed": 390444,
+  "analyst_profit_decline_gbp": 101057.82,
+  "unavailable_forecast": "explicit warning for 2026-11",
+  "local_tests_passed": 53,
+  "paid_api_enabled": false
+}
