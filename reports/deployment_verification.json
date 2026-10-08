@@ -20,6 +20,9 @@
   "scenario_profit_gbp_displayed": 390444,
   "analyst_profit_decline_gbp": 101057.82,
   "unavailable_forecast": "explicit warning for 2026-11",
-  "local_tests_passed": 53,
-  "paid_api_enabled": false
+  "local_tests_passed": 55,
+  "paid_api_enabled": false,
+  "hosted_review_passes": 2,
+  "reviewed_commit": "21cb6bfc1d3fec2136e1f43f82d8b86e6051e8e5",
+  "restart_recovery_verified": true
 }

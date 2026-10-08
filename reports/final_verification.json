@@ -92,7 +92,90 @@
     "Reject product sales-change comparisons when the preceding month has no observations; display an explanatory message.",
     "Replace outdated validation status with current evidence."
   ],
-  "live_checks": "Awaiting deployment of the reviewed correction.",
+  "live_checks": {
+    "final_two_passes_complete": true,
+    "pages": [
+      {
+        "pass": 1,
+        "page": "Overview",
+        "passed": true
+      },
+      {
+        "pass": 1,
+        "page": "Products",
+        "passed": true
+      },
+      {
+        "pass": 1,
+        "page": "Forecast",
+        "passed": true
+      },
+      {
+        "pass": 1,
+        "page": "Pricing",
+        "passed": true
+      },
+      {
+        "pass": 1,
+        "page": "Experiment",
+        "passed": true
+      },
+      {
+        "pass": 1,
+        "page": "Analyst",
+        "passed": true
+      },
+      {
+        "pass": 1,
+        "page": "Methodology",
+        "passed": true
+      },
+      {
+        "pass": 2,
+        "page": "Overview",
+        "passed": true
+      },
+      {
+        "pass": 2,
+        "page": "Products",
+        "passed": true
+      },
+      {
+        "pass": 2,
+        "page": "Forecast",
+        "passed": true
+      },
+      {
+        "pass": 2,
+        "page": "Pricing",
+        "passed": true
+      },
+      {
+        "pass": 2,
+        "page": "Experiment",
+        "passed": true
+      },
+      {
+        "pass": 2,
+        "page": "Analyst",
+        "passed": true
+      },
+      {
+        "pass": 2,
+        "page": "Methodology",
+        "passed": true
+      }
+    ],
+    "restart": "User authorized restart; hosting recovered.",
+    "resolved_hosting_error": "Automatic reload produced KeyError: ecommerce; full restart recovered.",
+    "interaction_checks": {
+      "pricing_7_percent_profit_gbp": 390444,
+      "analyst_profit_decline_gbp": 101057.82,
+      "unavailable_forecast": "Explicit warning for 2026-11",
+      "missing_previous_month": "Explicit explanatory message"
+    },
+    "current_errors_observed": 0
+  },
   "optional_not_validated": [
     "Paid OpenAI API (disabled)",
     "Docker runtime",
@@ -102,5 +185,12 @@
     "Costs are assumptions; contribution profit is modeled.",
     "A/B experiment is simulated.",
     "Forecast uses historical 2011 data and is not a current business forecast."
-  ]
+  ],
+  "reviewed_commit": "21cb6bfc1d3fec2136e1f43f82d8b86e6051e8e5",
+  "github_ci": {
+    "conclusion": "success",
+    "url": "https://github.com/mahima68/ecommerce-profitability-demand-forecasting/actions/runs/37835027423"
+  },
+  "repository_hash_checks_passed": 2,
+  "each_archive_integrity_and_exclusion_checks_passed": 2
 }

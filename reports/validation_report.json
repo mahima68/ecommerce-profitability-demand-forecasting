@@ -8,9 +8,12 @@
   "sqlite_verified": true,
   "postgres_verified": true,
   "independent_finance_forecast_statistics_verified_twice": true,
-  "public_deployment": "Previously verified; final correction awaits hosted recheck.",
+  "public_deployment": "Recovered after authorized restart; all seven pages passed two live reviews.",
   "openai_adapter_test": "Mock-tested only; paid API disabled",
   "docker_test": "Optional, not run",
   "powerbi": "User skipped; Desktop rendering not validated",
-  "evidence": "reports/final_verification.json"
+  "evidence": "reports/final_verification.json",
+  "github_ci": "Passed for reviewed commit 21cb6bfc1d3fec2136e1f43f82d8b86e6051e8e5",
+  "dashboard_pages_checked": 7,
+  "hosted_review_passes": 2
 }
