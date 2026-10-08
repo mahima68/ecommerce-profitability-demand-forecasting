@@ -1,0 +1,429 @@
+{
+  "name": "RetailAnalytics",
+  "compatibilityLevel": 1567,
+  "model": {
+    "culture": "en-GB",
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"DataFolder\", \"FactSource\", \"FactSales\", \"Products\", \"Months\", \"Countries\", \"Forecast\"]"
+      }
+    ],
+    "expressions": [
+      {
+        "name": "DataFolder",
+        "kind": "m",
+        "expression": "\"/Users/mahimamahajan/Documents/Codex/2026-10-08/f-2/outputs/ecommerce-decision-system/powerbi/data\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]"
+      },
+      {
+        "name": "FactSource",
+        "kind": "m",
+        "expression": [
+          "let",
+          "    Source = Csv.Document(File.Contents(DataFolder & \"/monthly_product_country.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+          "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+          "    Typed = Table.TransformColumnTypes(Headers, {{\"month\", type date}, {\"product_id\", type text}, {\"country\", type text}, {\"gross_revenue\", type number}, {\"refunds\", type number}, {\"net_revenue\", type number}, {\"sold_units\", type number}, {\"returned_units\", type number}, {\"assumed_cogs\", type number}, {\"assumed_marketplace_fees\", type number}, {\"assumed_advertising\", type number}, {\"modeled_contribution_profit\", type number}}, \"en-GB\")",
+          "in",
+          "    Typed"
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "FactSales",
+        "columns": [
+          {
+            "name": "month",
+            "dataType": "dateTime",
+            "sourceColumn": "month",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "product_id",
+            "dataType": "string",
+            "sourceColumn": "product_id",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "country",
+            "dataType": "string",
+            "sourceColumn": "country",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "gross_revenue",
+            "dataType": "double",
+            "sourceColumn": "gross_revenue",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "refunds",
+            "dataType": "double",
+            "sourceColumn": "refunds",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "net_revenue",
+            "dataType": "double",
+            "sourceColumn": "net_revenue",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "sold_units",
+            "dataType": "double",
+            "sourceColumn": "sold_units",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "returned_units",
+            "dataType": "double",
+            "sourceColumn": "returned_units",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "assumed_cogs",
+            "dataType": "double",
+            "sourceColumn": "assumed_cogs",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "assumed_marketplace_fees",
+            "dataType": "double",
+            "sourceColumn": "assumed_marketplace_fees",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "assumed_advertising",
+            "dataType": "double",
+            "sourceColumn": "assumed_advertising",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "modeled_contribution_profit",
+            "dataType": "double",
+            "sourceColumn": "modeled_contribution_profit",
+            "summarizeBy": "none",
+            "isHidden": true
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactSales",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "FactSource"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Net Revenue",
+            "expression": "SUM(FactSales[net_revenue])",
+            "formatString": "\u00a3#,0.00;(\u00a3#,0.00);\u00a30.00"
+          },
+          {
+            "name": "Modeled Contribution Profit",
+            "expression": "SUM(FactSales[modeled_contribution_profit])",
+            "formatString": "\u00a3#,0.00;(\u00a3#,0.00);\u00a30.00"
+          },
+          {
+            "name": "Gross Revenue",
+            "expression": "SUM(FactSales[gross_revenue])",
+            "formatString": "\u00a3#,0.00;(\u00a3#,0.00);\u00a30.00"
+          },
+          {
+            "name": "Refunds",
+            "expression": "SUM(FactSales[refunds])",
+            "formatString": "\u00a3#,0.00;(\u00a3#,0.00);\u00a30.00"
+          },
+          {
+            "name": "Sold Units",
+            "expression": "SUM(FactSales[sold_units])",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Returned Units",
+            "expression": "SUM(FactSales[returned_units])",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Assumed COGS",
+            "expression": "SUM(FactSales[assumed_cogs])",
+            "formatString": "\u00a3#,0.00;(\u00a3#,0.00);\u00a30.00"
+          },
+          {
+            "name": "Assumed Fees",
+            "expression": "SUM(FactSales[assumed_marketplace_fees])",
+            "formatString": "\u00a3#,0.00;(\u00a3#,0.00);\u00a30.00"
+          },
+          {
+            "name": "Assumed Advertising",
+            "expression": "SUM(FactSales[assumed_advertising])",
+            "formatString": "\u00a3#,0.00;(\u00a3#,0.00);\u00a30.00"
+          },
+          {
+            "name": "Modeled Margin",
+            "expression": "IF([Net Revenue] > 0, DIVIDE([Modeled Contribution Profit], [Net Revenue]))",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Return Unit Rate",
+            "expression": "DIVIDE([Returned Units], [Sold Units])",
+            "formatString": "0.0%"
+          }
+        ]
+      },
+      {
+        "name": "Products",
+        "columns": [
+          {
+            "name": "product_id",
+            "dataType": "string",
+            "sourceColumn": "product_id",
+            "summarizeBy": "none",
+            "isHidden": false
+          },
+          {
+            "name": "description",
+            "dataType": "string",
+            "sourceColumn": "description",
+            "summarizeBy": "none",
+            "isHidden": false
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Products",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"/products.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"product_id\", type text}, {\"description\", type text}}, \"en-GB\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Months",
+        "columns": [
+          {
+            "name": "month",
+            "dataType": "dateTime",
+            "sourceColumn": "month",
+            "summarizeBy": "none",
+            "isHidden": false
+          },
+          {
+            "name": "complete_month",
+            "dataType": "boolean",
+            "sourceColumn": "complete_month",
+            "summarizeBy": "none",
+            "isHidden": false
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Months",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"/months.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"month\", type date}, {\"complete_month\", type logical}}, \"en-GB\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Countries",
+        "columns": [
+          {
+            "name": "country",
+            "dataType": "string",
+            "sourceColumn": "country",
+            "summarizeBy": "none",
+            "isHidden": false
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Countries",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "Table.Distinct(Table.SelectColumns(FactSource, {\"country\"}))"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Forecast",
+        "columns": [
+          {
+            "name": "series_id",
+            "dataType": "string",
+            "sourceColumn": "series_id",
+            "summarizeBy": "none",
+            "isHidden": false
+          },
+          {
+            "name": "week",
+            "dataType": "dateTime",
+            "sourceColumn": "week",
+            "summarizeBy": "none",
+            "isHidden": false
+          },
+          {
+            "name": "model",
+            "dataType": "string",
+            "sourceColumn": "model",
+            "summarizeBy": "none",
+            "isHidden": false
+          },
+          {
+            "name": "predicted_units",
+            "dataType": "double",
+            "sourceColumn": "predicted_units",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "lower_units",
+            "dataType": "double",
+            "sourceColumn": "lower_units",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "upper_units",
+            "dataType": "double",
+            "sourceColumn": "upper_units",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "range_label",
+            "dataType": "string",
+            "sourceColumn": "range_label",
+            "summarizeBy": "none",
+            "isHidden": false
+          },
+          {
+            "name": "assumed_average_selling_price",
+            "dataType": "double",
+            "sourceColumn": "assumed_average_selling_price",
+            "summarizeBy": "none",
+            "isHidden": false
+          },
+          {
+            "name": "expected_gross_revenue",
+            "dataType": "double",
+            "sourceColumn": "expected_gross_revenue",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "as_of",
+            "dataType": "dateTime",
+            "sourceColumn": "as_of",
+            "summarizeBy": "none",
+            "isHidden": false
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Forecast",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"/forecast.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"series_id\", type text}, {\"week\", type date}, {\"model\", type text}, {\"predicted_units\", type number}, {\"lower_units\", type number}, {\"upper_units\", type number}, {\"range_label\", type text}, {\"assumed_average_selling_price\", type number}, {\"expected_gross_revenue\", type number}, {\"as_of\", type date}}, \"en-GB\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Predicted Units",
+            "expression": "IF(HASONEVALUE(Forecast[series_id]), SUM(Forecast[predicted_units]), CALCULATE(SUM(Forecast[predicted_units]), Forecast[series_id] = \"ALL\"))",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Lower Range",
+            "expression": "IF(HASONEVALUE(Forecast[series_id]), SUM(Forecast[lower_units]), CALCULATE(SUM(Forecast[lower_units]), Forecast[series_id] = \"ALL\"))",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Upper Range",
+            "expression": "IF(HASONEVALUE(Forecast[series_id]), SUM(Forecast[upper_units]), CALCULATE(SUM(Forecast[upper_units]), Forecast[series_id] = \"ALL\"))",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Expected Gross Revenue",
+            "expression": "IF(HASONEVALUE(Forecast[series_id]), SUM(Forecast[expected_gross_revenue]), CALCULATE(SUM(Forecast[expected_gross_revenue]), Forecast[series_id] = \"ALL\"))",
+            "formatString": "\u00a3#,0.00;(\u00a3#,0.00);\u00a30.00"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "Fact_Products",
+        "fromTable": "FactSales",
+        "fromColumn": "product_id",
+        "toTable": "Products",
+        "toColumn": "product_id",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "Fact_Months",
+        "fromTable": "FactSales",
+        "fromColumn": "month",
+        "toTable": "Months",
+        "toColumn": "month",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "Fact_Countries",
+        "fromTable": "FactSales",
+        "fromColumn": "country",
+        "toTable": "Countries",
+        "toColumn": "country",
+        "crossFilteringBehavior": "oneDirection"
+      }
+    ]
+  }
+}

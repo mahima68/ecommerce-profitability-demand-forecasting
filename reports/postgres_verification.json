@@ -1,0 +1,18 @@
+{
+  "verified_at_utc": "2026-10-08T12:43:56.447043+00:00",
+  "postgres_version": "18.6 (Postgres.app)",
+  "rows": 1032897,
+  "totals_reconciled": [
+    "net_revenue",
+    "modeled_contribution_profit",
+    "gross_revenue",
+    "refunds",
+    "assumed_cogs",
+    "assumed_marketplace_fees",
+    "assumed_advertising",
+    "sold_units",
+    "returned_units"
+  ],
+  "monthly_view_verified": true,
+  "product_view_verified": true
+}

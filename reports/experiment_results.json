@@ -1,0 +1,43 @@
+{
+  "label": "SIMULATED EXPERIMENT \u2014 not a real UCI A/B test",
+  "seed": 42,
+  "control_n": 10000,
+  "treatment_n": 10000,
+  "srm_p_value": 1.0,
+  "alpha": 0.05,
+  "minimum_profit_lift": 0.02,
+  "decision": "Meets simulated primary-metric rule",
+  "metrics": [
+    {
+      "metric": "contribution_profit",
+      "control_mean": 0.3439000000000001,
+      "treatment_mean": 0.466075,
+      "difference": 0.12217499999999992,
+      "p_value": 0.004526638332754348,
+      "ci_lower": 0.03783113655842055,
+      "ci_upper": 0.2065188634415793,
+      "role": "primary"
+    },
+    {
+      "metric": "revenue",
+      "control_mean": 1.868,
+      "treatment_mean": 2.1231,
+      "difference": 0.2550999999999999,
+      "p_value": 0.059709789027095894,
+      "ci_lower": -0.010437514131256764,
+      "ci_upper": 0.5206375141312565,
+      "role": "exploratory"
+    },
+    {
+      "metric": "conversion",
+      "control_mean": 0.0501,
+      "treatment_mean": 0.0543,
+      "difference": 0.004200000000000002,
+      "p_value": 0.18181656527700718,
+      "ci_lower": -0.001965060404470564,
+      "ci_upper": 0.010365060404470569,
+      "role": "exploratory"
+    }
+  ],
+  "conversion_sample_size_per_arm": 8158
+}

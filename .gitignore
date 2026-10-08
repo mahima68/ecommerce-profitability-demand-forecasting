@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.env
+.env.*
+.streamlit/secrets.toml
+.streamlit/.secrets-*
+powerbi/**/.pbi/
+powerbi/**/*.abf
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*.sqlite
+reports/rejected_rows.csv
+reports/non_product_rows.csv
+reports/uncosted_rows.csv
+reports/cross_sheet_overlap.csv

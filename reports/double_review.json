@@ -1,0 +1,75 @@
+{
+  "project_name": "E-commerce Profitability & Forecasting System",
+  "source_sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980",
+  "passes": 2,
+  "tests_per_pass": 51,
+  "fresh_dependency_install": true,
+  "pip_check": "No broken requirements found",
+  "independent_audit": {
+    "cross_sheet_overlap_removed": 22523,
+    "source_rows": 1067371,
+    "modeled_rows": 1032897,
+    "rejected_rows": 6030,
+    "non_product_rows": 5900,
+    "uncosted_rows": 21,
+    "independent_financial_totals": {
+      "net_revenue": 18980392.509999998,
+      "gross_revenue": 19699784.97,
+      "refunds": 719392.46,
+      "assumed_cogs": 11080689.56225,
+      "assumed_marketplace_fees": 2954967.7454999997,
+      "assumed_advertising": 1575982.7976000002,
+      "modeled_contribution_profit": 3368752.4046499995,
+      "sold_units": 11221670.0,
+      "returned_units": 469827.0
+    },
+    "monthly_product_country_metrics_verified": true,
+    "independent_forecast_equations_verified": true,
+    "independent_welch_tests_and_intervals_verified": true,
+    "both_sqlite_databases_verified": true
+  },
+  "rebuild_comparison": {
+    "reports_match": [
+      "country_profitability.csv",
+      "cross_sheet_overlap.csv",
+      "experiment_results.json",
+      "forecast_backtests.csv",
+      "forecast_future.csv",
+      "forecast_history.csv",
+      "forecast_scores.csv",
+      "forecast_skipped.json",
+      "monthly_profitability.csv",
+      "non_product_rows.csv",
+      "product_momentum.csv",
+      "product_profitability.csv",
+      "quality_report.json",
+      "rejected_rows.csv",
+      "simulated_experiment.csv",
+      "uncosted_rows.csv"
+    ],
+    "source_sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980"
+  },
+  "postgres_audit": {
+    "postgres_version": "18.6 (Postgres.app)",
+    "rows": 1032897,
+    "read_only_comparison": true,
+    "all_nine_metrics_verified_by": [
+      "month",
+      "product_id",
+      "country"
+    ]
+  },
+  "pending": [
+    "Power BI Desktop refresh/render",
+    "Live OpenAI API verification",
+    "Docker runtime validation",
+    "Public deployment"
+  ],
+  "processed_files_match_between_rebuilds": true,
+  "powerbi_schema_files_validated_per_pass": 39,
+  "browser_checks": [
+    "November 2011 overview totals",
+    "Explicit top-five request returns five rows",
+    "Unavailable 2026 forecast rejected"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "label": "Illustrative assumptions; not observed business costs",
+  "unit_cost_share_of_product_reference_price": 0.55,
+  "marketplace_fee_share_of_positive_sales": 0.15,
+  "advertising_share_of_positive_sales": 0.08,
+  "returned_inventory_cost_recovery_share": 1.0,
+  "marketplace_fee_refund_share": 0.0
+}

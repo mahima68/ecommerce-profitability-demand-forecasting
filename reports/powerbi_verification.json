@@ -1,0 +1,21 @@
+{
+  "authoring_complete": true,
+  "desktop_refresh_verified": false,
+  "desktop_render_verified": false,
+  "fact_grain": "month \u00d7 product \u00d7 country",
+  "fact_rows": 126750,
+  "additive_metrics_reconciled": [
+    "gross_revenue",
+    "refunds",
+    "net_revenue",
+    "sold_units",
+    "returned_units",
+    "assumed_cogs",
+    "assumed_marketplace_fees",
+    "assumed_advertising",
+    "modeled_contribution_profit"
+  ],
+  "source_rows": 1032897,
+  "json_schema_verified": true,
+  "json_files_validated": 39
+}

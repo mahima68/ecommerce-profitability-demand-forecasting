@@ -1,0 +1,13 @@
+{
+  "automated_tests_passed": 42,
+  "dashboard_pages_checked": 7,
+  "full_dataset_pipeline_completed": true,
+  "source_rows": 1067371,
+  "cross_sheet_overlap_removed": 22523,
+  "modeled_rows": 1032897,
+  "full_sqlite_reconciliation_passed": true,
+  "openai_adapter_test": "Mocked response only; live credentials unavailable",
+  "postgres_test": "Server start blocked by OS shared-memory restrictions; integration unverified",
+  "docker_test": "Not run: Docker unavailable",
+  "public_deployment": "Not performed: account details pending"
+}
