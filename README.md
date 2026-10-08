@@ -136,4 +136,4 @@ flowchart LR
 
 ## Source and attribution
 
-Chen, D. (2012). *Online Retail II* [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5CG6D. [Dataset page](https://archive.ics.uci.edu/dataset/502/online+retail+ii). CC BY 4.0. The original workbook is preserved; processing/exclusions and synthetic additions are documented above. There is no connection to SHOEGR company data.
+Chen, D. (2012). *Online Retail II* [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5CG6D. [Dataset page](https://archive.ics.uci.edu/dataset/502/online+retail+ii). CC BY 4.0. The original workbook is preserved; processing/exclusions and synthetic additions are documented above. 
