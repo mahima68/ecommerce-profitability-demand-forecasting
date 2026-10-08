@@ -61,6 +61,8 @@ def simulate(df, price_change=0.05, elasticity=-1.0, advertising_change=0.0):
 
 def product_momentum(df, month):
     previous = str(pd.Period(month, 'M') - 1)
+    if not df.month.eq(previous).any():
+        raise ValueError('The preceding month has no data for this selection; sales changes cannot be calculated.')
     a = aggregate(df[df.month.eq(month)], ['product_id']).set_index('product_id')
     b = aggregate(df[df.month.eq(previous)], ['product_id']).set_index('product_id')
     result = a[['net_revenue', 'modeled_contribution_profit', 'sold_units']].join(

@@ -186,7 +186,11 @@ elif page == 'Products':
     elif view == 'Negative modeled profit':
         products = products[products.modeled_contribution_profit.lt(0)]
     elif view == 'Declining sold units':
-        products = product_momentum(scoped, month)
+        try:
+            products = product_momentum(scoped, month)
+        except ValueError as error:
+            st.info(str(error))
+            st.stop()
         products = products[products.unit_change.lt(0)]
     if search:
         products = products[products.product_id.str.contains(search, case=False, regex=False) | products.description.str.contains(search, case=False, regex=False)]

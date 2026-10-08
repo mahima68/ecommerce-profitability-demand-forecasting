@@ -95,7 +95,7 @@ python -m pip install -r requirements-dev.txt
 python -m pytest tests -q
 ```
 
-The 53-test suite covers private settings, Power BI export totals and report field bindings, financial identity, returns and refunds, missing/invalid fields, row partitioning, constant forecasts, model-selection isolation from test outcomes, price/advertising scenarios, SQL reconciliation, seeded experimentation, invalid planner calls, missing periods, and all seven dashboard pages. Controls are exercised to confirm that results update.
+The 55-test suite covers private settings, Power BI export totals and report field bindings, financial identity, returns and refunds, missing/invalid fields, row partitioning, constant forecasts, model-selection isolation from test outcomes, price/advertising scenarios, SQL reconciliation, seeded experimentation, invalid planner calls, missing periods, and all seven dashboard pages. Controls are exercised to confirm that results update.
 
 ## Deploy
 

@@ -31,3 +31,11 @@ def test_analyst_executes_question(app):
     app.button[0].click().run()
     assert not app.exception
     assert any('decreased' in x.value for x in app.markdown)
+
+
+def test_declining_products_missing_baseline_shows_message(app):
+    app.sidebar.radio[0].set_value('Products').run()
+    app.sidebar.selectbox[0].set_value('2009-12').run()
+    next(widget for widget in app.selectbox if widget.label == 'Product view').set_value('Declining sold units').run()
+    assert not app.exception
+    assert any('preceding month' in message.value for message in app.info)

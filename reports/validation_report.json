@@ -1,13 +1,16 @@
 {
-  "automated_tests_passed": 42,
-  "dashboard_pages_checked": 7,
-  "full_dataset_pipeline_completed": true,
+  "verified_date": "2026-10-09",
+  "automated_tests_passed": 55,
+  "clean_review_passes": 2,
+  "full_pipeline_completed": true,
   "source_rows": 1067371,
-  "cross_sheet_overlap_removed": 22523,
   "modeled_rows": 1032897,
-  "full_sqlite_reconciliation_passed": true,
-  "openai_adapter_test": "Mocked response only; live credentials unavailable",
-  "postgres_test": "Server start blocked by OS shared-memory restrictions; integration unverified",
-  "docker_test": "Not run: Docker unavailable",
-  "public_deployment": "Not performed: account details pending"
+  "sqlite_verified": true,
+  "postgres_verified": true,
+  "independent_finance_forecast_statistics_verified_twice": true,
+  "public_deployment": "Previously verified; final correction awaits hosted recheck.",
+  "openai_adapter_test": "Mock-tested only; paid API disabled",
+  "docker_test": "Optional, not run",
+  "powerbi": "User skipped; Desktop rendering not validated",
+  "evidence": "reports/final_verification.json"
 }

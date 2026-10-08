@@ -1,0 +1,106 @@
+{
+  "verified_date": "2026-10-09",
+  "published_base_commit": "8d7ddf1abecdbc1735516e3cba0e1723d1f754d6",
+  "clean_review_passes": 2,
+  "tests_passed_each": 55,
+  "fresh_dependency_installs": 2,
+  "pipeline_rebuilds_from_original_workbook": 2,
+  "independent_audits": [
+    {
+      "cross_sheet_overlap_removed": 22523,
+      "source_rows": 1067371,
+      "modeled_rows": 1032897,
+      "rejected_rows": 6030,
+      "non_product_rows": 5900,
+      "uncosted_rows": 21,
+      "independent_financial_totals": {
+        "net_revenue": 18980392.509999998,
+        "gross_revenue": 19699784.97,
+        "refunds": 719392.46,
+        "assumed_cogs": 11080689.56225,
+        "assumed_marketplace_fees": 2954967.7454999997,
+        "assumed_advertising": 1575982.7976000002,
+        "modeled_contribution_profit": 3368752.4046499995,
+        "sold_units": 11221670.0,
+        "returned_units": 469827.0
+      },
+      "monthly_product_country_metrics_verified": true,
+      "independent_forecast_equations_verified": true,
+      "independent_welch_tests_and_intervals_verified": true,
+      "both_sqlite_databases_verified": true
+    },
+    {
+      "cross_sheet_overlap_removed": 22523,
+      "source_rows": 1067371,
+      "modeled_rows": 1032897,
+      "rejected_rows": 6030,
+      "non_product_rows": 5900,
+      "uncosted_rows": 21,
+      "independent_financial_totals": {
+        "net_revenue": 18980392.509999998,
+        "gross_revenue": 19699784.97,
+        "refunds": 719392.46,
+        "assumed_cogs": 11080689.56225,
+        "assumed_marketplace_fees": 2954967.7454999997,
+        "assumed_advertising": 1575982.7976000002,
+        "modeled_contribution_profit": 3368752.4046499995,
+        "sold_units": 11221670.0,
+        "returned_units": 469827.0
+      },
+      "monthly_product_country_metrics_verified": true,
+      "independent_forecast_equations_verified": true,
+      "independent_welch_tests_and_intervals_verified": true,
+      "both_sqlite_databases_verified": true
+    }
+  ],
+  "postgres_audits": [
+    {
+      "rows": 1032897,
+      "totals": "all nine financial and unit metrics reconcile",
+      "month": "all nine financial and unit metrics reconcile",
+      "product_id": "all nine financial and unit metrics reconcile",
+      "country": "all nine financial and unit metrics reconcile",
+      "server_version": "18.6 (Postgres.app)"
+    },
+    {
+      "rows": 1032897,
+      "totals": "all nine financial and unit metrics reconcile",
+      "month": "all nine financial and unit metrics reconcile",
+      "product_id": "all nine financial and unit metrics reconcile",
+      "country": "all nine financial and unit metrics reconcile",
+      "server_version": "18.6 (Postgres.app)"
+    }
+  ],
+  "rebuild_comparison": {
+    "quality_report.json": "both rebuilds match each other and published results byte for byte",
+    "experiment_results.json": "both rebuilds match each other and published results byte for byte",
+    "product_profitability.csv": "both rebuilds match each other and published results byte for byte",
+    "monthly_profitability.csv": "both rebuilds match each other and published results byte for byte",
+    "country_profitability.csv": "both rebuilds match each other and published results byte for byte",
+    "product_momentum.csv": "both rebuilds match each other and published results byte for byte",
+    "forecast_future.csv": "both rebuilds match each other and published results byte for byte",
+    "forecast_history.csv": "both rebuilds match each other and published results byte for byte",
+    "forecast_backtests.csv": "both rebuilds match each other and published results byte for byte",
+    "forecast_scores.csv": "both rebuilds match each other and published results byte for byte",
+    "forecast_skipped.json": "both rebuilds match each other and published results byte for byte",
+    "simulated_experiment.csv": "both rebuilds match each other and published results byte for byte",
+    "transactions.parquet": "all values and types match exactly in both rebuilds and published data",
+    "product_month.parquet": "all values and types match exactly in both rebuilds and published data",
+    "workbook_sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980"
+  },
+  "fixes": [
+    "Reject product sales-change comparisons when the preceding month has no observations; display an explanatory message.",
+    "Replace outdated validation status with current evidence."
+  ],
+  "live_checks": "Awaiting deployment of the reviewed correction.",
+  "optional_not_validated": [
+    "Paid OpenAI API (disabled)",
+    "Docker runtime",
+    "Power BI Desktop rendering (user skipped Power BI)"
+  ],
+  "limitations": [
+    "Costs are assumptions; contribution profit is modeled.",
+    "A/B experiment is simulated.",
+    "Forecast uses historical 2011 data and is not a current business forecast."
+  ]
+}

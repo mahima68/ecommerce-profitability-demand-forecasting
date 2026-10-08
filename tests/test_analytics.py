@@ -108,6 +108,11 @@ def test_disappearing_product_in_momentum(facts):
     assert len(result) == 2 and (result.unit_change < 0).all()
 
 
+def test_momentum_rejects_missing_previous_month(facts):
+    with pytest.raises(ValueError, match='preceding month'):
+        product_momentum(facts, '2011-01')
+
+
 def test_partial_month_excluded(facts):
     assert complete_months(facts) == ['2011-01']
 
